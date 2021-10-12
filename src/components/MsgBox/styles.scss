@@ -1,0 +1,32 @@
+@import '../../colors';
+
+.msg-appear {
+  transform: translate(0px, -100px);
+  color: transparent;
+}
+
+.msg-appear-active {
+  transform: translate(0px, 0px);
+  color: $main;
+  transition: transform .5s cubic-bezier(0,0,.35,1), color .5s cubic-bezier(1,0,.5,1);
+}
+
+.msg-enter {
+  transform: translate(0px, -100px);
+  color: transparent;
+}
+
+.msg-enter-active {
+  transform: translate(0px, 0px);
+  color: $main;
+  transition: transform .5s cubic-bezier(0,0,.35,1), color .5s cubic-bezier(1,0,.5,1);
+}
+
+.msg-exit {
+  color: $main;
+}
+
+.msg-exit-active {
+  color: transparent;
+  transition: color .25s;
+}

@@ -1,0 +1,67 @@
+@import '../../colors';
+
+$inputBorderSize: clamp(1px,2vw,3px);
+
+.InputBox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Input{
+  position: absolute;
+  text-align: center;
+  width: auto;
+  background-color: transparent;
+  border: 0px;
+}
+
+.Input:focus-visible {
+  outline: none;
+}
+
+.inputBorder {
+  position: absolute;
+  width: clamp(400px,50vw,1200px);
+  height: clamp(80px,10vw,120px);
+  border: $inputBorderSize $main solid;
+  border-radius: 25px;
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+}
+.fadeOut {
+  animation: fadeOut 1s;
+  -webkit-animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  border: $inputBorderSize transparent solid;
+}
+
+@keyframes fadeIn {
+  0% {border-color:transparent;}
+  100% {border-color:$main;}
+}
+@-moz-keyframes fadeIn {
+  0% {border-color:transparent;}
+  100% {border-color:$main;}
+}
+@-webkit-keyframes fadeIn {
+  0% {border-color:transparent;}
+  100% {border-color:$main;}
+}
+
+@keyframes fadeOut {
+  0% {border-color:$main;}
+  100% {border-color:transparent;}
+}
+@-moz-keyframes fadeOut {
+  0% {border-color:$main;}
+  100% {border-color:transparent;}
+}
+@-webkit-keyframes fadeOut {
+  0% {border-color:$main;}
+  100% {border-color:transparent;}
+}
