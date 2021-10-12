@@ -10,7 +10,10 @@ const MainPage = () => (
       You can contact me at <a href='mailto: michael.bilyk@hey.com' >michael.bilyk@hey.com</a><br/>
       or connect with me on <a href='https://www.linkedin.com/in/mbilyk/'>LinkedIn</a>
     </p>
-    <p>This app was built in React</p>
+    <p>
+      This app was built in React<br/>
+      The source code can be found <a href='https://github.com/mbilyk/mbilyk.github.io/'>here</a>
+    </p>
   </div>
 );
 
