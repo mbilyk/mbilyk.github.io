@@ -19,8 +19,8 @@ export default function InputBox(props) {
     <div className={styles.InputBox} data-testid="InputBox">
       <div className={getBorder()}/>
       <Input
-        className={styles.Input}
-        inputProps={{ 
+        // className={styles.Input}
+        inputProps={{
           style: { 
             textAlign: 'center'
           }}}

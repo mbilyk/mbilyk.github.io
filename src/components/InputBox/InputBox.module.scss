@@ -1,4 +1,5 @@
 @import '../../colors';
+@import '../../fonts';
 
 $inputBorderSize: clamp(1px,2vw,3px);
 
@@ -22,7 +23,7 @@ $inputBorderSize: clamp(1px,2vw,3px);
 
 .inputBorder {
   position: absolute;
-  width: clamp(400px,50vw,1200px);
+  width: clamp(200px,50vw,1200px);
   height: clamp(80px,10vw,120px);
   border: $inputBorderSize $main solid;
   border-radius: 25px;

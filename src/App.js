@@ -1,14 +1,45 @@
 import './App.scss';
-import Welcome from './components/Welcome/Welcome'
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
+import StateManager from './components/StateManager/StateManager'
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stateIndex: 0,
+      nextState: 'Welcome',
+    }
+    this.changeState = this.changeState.bind(this)
+    this.stateArray = [
+      'Welcome',
+      'MainPage'
+    ]
+  }
+
+  changeState() {
+    const newStateIndex = this.state.stateIndex + 1;
+    if(newStateIndex >= this.stateArray.length){
+      // Wrap-around stateArray
+      this.setState({
+        nextState: this.stateArray[0],
+        stateIndex: 0
+      });
+    } else {
+      // Go to next
+      this.setState({
+        nextState: this.stateArray[newStateIndex]
+      })
+    } 
+  }
+
+  render() {
+    return (
+      <div className="App">
       <header className="App-header">
-        <Welcome />
+        <StateManager nextState={this.state.nextState} onReturn={this.changeState} />        
       </header>
     </div>
-  );
+    )
+  }
 }
-
-export default App;

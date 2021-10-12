@@ -1,0 +1,10 @@
+@import '../../colors';
+
+.welcome-exit {
+  opacity: 100%;
+}
+
+.welcome-exit-active {
+  opacity: 0%;
+  transition: transform .5s, opacity .5s;
+}

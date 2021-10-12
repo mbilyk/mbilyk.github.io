@@ -1,7 +1,10 @@
 @import 'colors';
+@import 'fonts';
 
 .App {
   text-align: center;
+  font-family: $sans;
+  font-weight: lighter;
 }
 
 .App-logo {
@@ -27,4 +30,8 @@
 
 .App-link {
   color: $neutral;
+}
+
+strong{
+  font-family: $sans;
 }
