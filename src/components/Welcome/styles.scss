@@ -1,10 +1,20 @@
 @import '../../colors';
 
 .welcome-exit {
+  width: 100%; 
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
   opacity: 100%;
 }
 
 .welcome-exit-active {
-  opacity: 0%;
-  transition: transform .5s, opacity .5s;
+  width: 100%; 
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+  transition: -ms-filter .5s, filter .5s, -moz-opacity .5s, -khtml-opacity .5s, opacity .5s;
 }
