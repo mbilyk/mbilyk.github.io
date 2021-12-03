@@ -5,12 +5,14 @@ import MainPage from '../MainPage/MainPage';
 
 const StateManager = (props) => {
   const { nextState, onReturn } = props;
-  if (nextState === 'Welcome') {
-    return <Welcome onReturn={onReturn} />
-  } else if (nextState === 'MainPage') {
-    return <MainPage />
+  switch(nextState) {
+    case 'Welcome':
+      return <Welcome onReturn={onReturn} />
+    case 'MainPage':
+      return <MainPage onReturn={onReturn} placeholder={true}/>
+    default: 
+      return <span>What are you doing? Get out of here!</span>
   }
-  return <span>What are you doing? Get out of here!</span>
 };
 
 StateManager.propTypes = {

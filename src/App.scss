@@ -2,8 +2,7 @@
 @import 'fonts';
 
 .App {
-  text-align: center;
-  font-family: $sans;
+  font-family: $serif;
   font-weight: lighter;
 }
 
@@ -22,9 +21,6 @@
   background-color: $background;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   color: $danger;
 }
 
@@ -33,5 +29,6 @@
 }
 
 strong{
-  font-family: $sans;
+  font-family: $serif;
+  font-weight: bold;
 }

@@ -2,6 +2,8 @@
 @import '../../fonts';
 
 .MainPage {
+  display: flex;
+  width: 100%;
   font-family: $serif;
   color: $emph;
   animation-name: fadeIn;
@@ -10,7 +12,7 @@
   -webkit-animation-duration: .5s;
   -moz-animation-name: fadeIn;
   -moz-animation-duration: .5s;
-  
+  padding-left: 200px;
   h1 {
     font-family: $fancy;
   }
@@ -30,4 +32,55 @@
 @-webkit-keyframes fadeIn {
   0% {opacity: 0}
   100% {opacity: 1}
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  button {
+    font: inherit;
+    background: none;
+    border: none;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: $emph;
+    display: block;
+    transition: 0.2s;
+    &:hover {
+      color: $neutral;
+      text-decoration: underline;
+    };
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .MainPage {
+    padding-left: 0;
+  }
+  .sidenav {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px 0px 0px 0px;
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+  .sidenav button {
+    font-size: 18px;
+    padding: 0;}
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
 }

@@ -1,24 +1,45 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
+import React, { Component } from 'react'
 import styles from './MainPage.module.scss';
+import AboutMe from '../AboutMe/AboutMe';
+import Contact from '../Contact/Contact';
+import Opening from '../Opening/Opening';
+import Experience from '../Experience/Experience';
 
-const MainPage = () => (
-  <div className={styles.MainPage} data-testid="MainPage">
-    <h1>Welcome</h1>
-    <p>This website is currently under construction</p>
-    <p>
-      You can contact me at <a href='mailto: michael.bilyk@hey.com' >michael.bilyk@hey.com</a><br/>
-      or connect with me on <a href='https://www.linkedin.com/in/mbilyk/'>LinkedIn</a>
-    </p>
-    <p>
-      This app was built in React<br/>
-      The source code can be found <a href='https://github.com/mbilyk/mbilyk.github.io/'>here</a>
-    </p>
-  </div>
-);
+export default class MainPage extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      content: 'opening'
+    }
+  }
 
-MainPage.propTypes = {};
+  content(){
+    switch (this.state.content) {
+      case 'opening':
+        return <Opening />
+      case 'about':
+        return <AboutMe />
+      case 'contact':
+        return <Contact />
+      case 'experience':
+        return <Experience />
+      default:
+        return <div>{this.state.content}</div>
+    }
+  }
 
-MainPage.defaultProps = {};
-
-export default MainPage;
+  render() {
+    return (
+      <div className={styles.MainPage} data-testid="MainPage">
+        <div className={styles.sidenav}>
+          <button onClick={() => this.setState({content:'experience'})}>Experience</button>
+          <button onClick={() => this.setState({content:'about'})}>About Me</button>
+          <button onClick={() => this.setState({content:'contact'})}>Contact</button>
+        </div>
+        <div className={styles.contentContainer}>
+          {this.content()}
+        </div>
+      </div>
+    )
+  }
+}

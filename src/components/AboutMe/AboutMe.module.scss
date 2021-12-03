@@ -1,0 +1,14 @@
+.AboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 40vw;
+}
+
+img {
+  width: 40vw;
+  max-width: 600px;
+}
